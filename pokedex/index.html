@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="title">Typed Pokedex</div>
+      <div id="pokedex"></div>
+      <div id="actions">
+        <button id="previous" disabled class="button">Previous</button>
+        <button id="next" disabled class="button">Next</button>
+      </div>
+    </div>
+    <div id="loading" class="overlay">
+      <div class="overlay__inner">
+        <div class="overlay__content"><span class="spinner"></span></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
