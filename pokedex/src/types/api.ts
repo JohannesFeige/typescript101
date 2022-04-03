@@ -1,13 +1,8 @@
-export type PokemonResponseResult = {
-    name: string;
-    url: string;
-};
-
 export type PokemonListResponse = {
     count: number;
     next: string | null;
     previous: string | null;
-    results: PokemonResponseResult[];
+    results: {name: string, url: string}[];
 };
 
 export type PokemonResponse = {
