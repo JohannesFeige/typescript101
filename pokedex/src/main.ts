@@ -1,7 +1,6 @@
 import './style.css';
 import { get } from './pokeApi';
 import { renderPokedex } from './renderer';
-import { PokedexResult, Pokemon } from './types/pokemon';
 
 const init = async () => {
     const result = await fetchPokedex();
@@ -10,17 +9,20 @@ const init = async () => {
     initButtons(result.previous, result.next);
 };
 
-const fetchPokedex = async (url?: string): Promise<PokedexResult> => {
+// Todo: add type of promise
+const fetchPokedex = async (url?: string): Promise<unkown> => {
     showLoading();
 
-    const result = await get(url);
+    // Todo: get pokedex from api here
+    const result = ...;
 
     hideLoading();
 
     return result;
 };
 
-const showPokedex = (pokedex: Pokemon[]) => {
+// Todo: what is the type of pokedex here?
+const showPokedex = (pokedex: unkown[]) => {
     const pokedexContainer = document.querySelector<HTMLDivElement>('#pokedex')!;
 
     renderPokedex(pokedexContainer, pokedex);

@@ -1,31 +1,7 @@
-export type PokemonResponseResult = {
-    name: string;
-    url: string;
-};
+export type PokemonListResponse = unknown;
 
-export type PokemonListResponse = {
-    count: number;
-    next: string | null;
-    previous: string | null;
-    results: PokemonResponseResult[];
-};
+export type PokemonResponse = unknown;
 
-export type PokemonResponse = {
-    id: number;
-    name: string;
-    types: Type[];
-    sprites: Sprites;
-};
+type Type = unknown;
 
-type Type = {
-    slot: number;
-    type: { name: string; url: string };
-};
-
-type Sprites = {
-    other: {
-        'official-artwork': {
-            front_default: string;
-        };
-    };
-};
+type Sprites = unknown;

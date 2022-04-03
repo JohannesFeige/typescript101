@@ -7,7 +7,8 @@ export const get = async (url?: string): Promise<PokedexResult> => {
     const data = await fetch(url ?? baseUrl);
     const rawList: PokemonListResponse = await data.json();
 
-    const pokedex = await Promise.all(rawList.results.map((x) => getPokemonDetails({ url: x.url })));
+    // TODO: get pokemon details
+    // const pokedex = await Promise.all(...);
 
     return {
         pokedex,
@@ -19,14 +20,12 @@ export const get = async (url?: string): Promise<PokedexResult> => {
 export const getPokemonDetails = async ({ id, url }: { id?: number; url?: string }): Promise<Pokemon> => {
     const pokemonUrl = url ?? `${baseUrl}${id}`;
     const data = await fetch(pokemonUrl);
-    const rawPokemon: PokemonResponse = await data.json();
 
-    const pokemon: Pokemon = {
-        id: rawPokemon.id,
-        name: rawPokemon.name,
-        types: rawPokemon.types.map((x) => x.type.name),
-        imageSrc: rawPokemon.sprites.other['official-artwork'].front_default,
-    };
+    // TODO: data -> PokemonResponse
+    // const rawPokemon: PokemonResponse = ...;
+
+    // TODO: Map to Pokemon
+    // const pokemon: Pokemon = ...;
 
     return pokemon;
 };

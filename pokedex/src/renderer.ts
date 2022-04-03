@@ -1,12 +1,13 @@
-export const renderPokedex = (container: HTMLElement, pokemon: { id: number; imageSrc: string; name: string; types: string[] }[]): void => {
+export const renderPokedex = (container: HTMLElement, pokemonList: { id: number; imageSrc: string; name: string; types: string[] }[]): void => {
     const pokedex = `
-        ${pokemon.map(renderPokemon).join('')}
+        ${pokemonList.map(pokemon => renderPokemon(pokemon)).join('')}
     `;
 
     container.innerHTML = pokedex;
 };
 
-const renderPokemon = ({ id, imageSrc, name, types }: { id: number; imageSrc: string; name: string; types: string[] }): string => `
+// Todo: add inline type here:
+const renderPokemon = ({ ... }: { ... }): string => `
     <div class="pokemon-card">
         <div class="pokemon">
             <div class="id">#${id}</div>
