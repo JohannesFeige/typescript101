@@ -1,3 +1,5 @@
+// ---------- Übung 1 ----------
+
 // string
 let trainingTitle;
 trainingTitle = "TS Basics";
@@ -67,6 +69,14 @@ training = {
   attendees: 20,
 };
 
+// unknown
+function convertUnkown(val) {
+  if (typeof val === "string") {
+    return val;
+  }
+  return val.toString();
+}
+
 // type Training = {
 
 // }
@@ -88,24 +98,55 @@ let angularTraining = {
   },
 };
 
-// unknown + check types
-function convertUnkown(val) {
-  if (typeof val === "string") {
-    return val;
-  }
-  return val.toString();
-}
-
-// -----------------------------------------------------------------------------
+// ---------- Übung 2 ----------
 
 // union types
-type Bird = {};
+type Bird = {  
+  layEggs: () => void;
+  fly: () => void;
+  canSpeak: boolean;
+};
 
-type Fish = {};
+type Fish = {
+  layEggs: () => void;
+  swim: () => void;
+};
 
-function getAnimal() {}
+function getAnimal(animal: Fish | Bird): Fish | Bird {
+  if ('canSpeak' in animal) {
+    animal.fly()
+  } else {
+    animal.swim()
+  }
+
+  return animal;
+}
 
 // intersection types
+type CommonResponse = {
+  success: boolean;
+  error: string;
+}
+
+type Data = {
+  value: string[];
+}
+
+type Measurement = {
+  value: number;
+}
+
+type DataResponse = Data & CommonResponse;
+
+type MeasurementResponse = Measurement & CommonResponse;
+
+const dataResonse: DataResponse = {
+
+}
+
+const measurementResponse: MeasurementResponse = {
+
+}
 
 // Partial
 
@@ -121,6 +162,17 @@ function getAnimal() {}
 
 // nullish coalescing
 
+// -----------------------------------------------------------------------------
+
+// template literals
+
+// spread & rest operator
+
+// destructuring of objects and arrays
+
+// promises
+
+// -----------------------------------------------------------------------------
 
 // map & reduce
 
@@ -132,5 +184,3 @@ const bankAccounts = [
   { name: "Chloe", balance: 11000 },
   { name: "Alan", balance: NaN },
 ];
-
-// promises
