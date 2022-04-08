@@ -112,14 +112,8 @@ type Fish = {
   swim: () => void;
 };
 
-function getAnimal(animal: Fish | Bird): Fish | Bird {
-  if ('canSpeak' in animal) {
-    animal.fly()
-  } else {
-    animal.swim()
-  }
-
-  return animal;
+function getAnimal(animal) {
+  
 }
 
 // intersection types
